@@ -10,12 +10,14 @@ public class HannesArrayList<E> {
         hanneArray = new Object[1];
     }
 
-    //Works
+    //Returns the array object, depending on the index chosen
     public Object get(int index){
         return Array.get(hanneArray, index-1);
     }
 
-    //Works
+    //Adds an element to the array, taking an index, and a value
+    //The element that is already present on that index is pushed so the array is made 1 longer
+    //NOTE: When the array is made 1 longer, a new array is made
     public void add(int index, E e){
         Object[] tempArray = new Object[hanneArray.length+1];
 
@@ -26,7 +28,8 @@ public class HannesArrayList<E> {
         hanneArray = tempArray;
     }
 
-    //Works
+    //Adds a element to the array, and the array is made 1 longer
+    //NOTE: When the array is made 1 longer, a new array is made
     public void add(E e){
         if (arraySize == hanneArray.length){
             int newArraySize = hanneArray.length + 1;
@@ -35,7 +38,8 @@ public class HannesArrayList<E> {
         hanneArray[arraySize++] = e;
     }
 
-    //Works
+    //Removes a element from a given index
+    //NOTE: When the array is made 1 shorter, a new array is made
     public void remove(int index){
         hanneArray[index-1] = null;
 
@@ -49,18 +53,18 @@ public class HannesArrayList<E> {
         hanneArray = tempArray;
     }
 
-    //Works
+    //returns the length of the array
     public int size(){
         return hanneArray.length;
     }
 
-    //Works
+    //creates a new array, and resets its size
     public void clear(){
         hanneArray = new Object[1];
         arraySize = 0;
     }
 
-    //Works
+    //prints out the elements of the array
     public void print(){
         System.out.println(Arrays.toString(hanneArray));
     }
