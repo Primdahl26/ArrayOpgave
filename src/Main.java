@@ -67,7 +67,7 @@ public class Main {
         //adding the hanne object the the array
         hanneArrayList.add(hanne);
 
-        System.out.println("\nPrinter objektet hanne ud (Dette vil være en hukommelse placering):");
+        System.out.println("\nLaver en liste af objekter fra klassen Hanne\n\nPrinter hanne objekterne ud (Dette vil være en hukommelse placering):");
         hanneArrayList.print();
     }
 }
