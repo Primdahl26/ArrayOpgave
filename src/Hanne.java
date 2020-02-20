@@ -1,4 +1,6 @@
 public class Hanne {
+
+    private final boolean godStatus = true;
     private String son1;
     private String son2;
     private int shoeSize;
