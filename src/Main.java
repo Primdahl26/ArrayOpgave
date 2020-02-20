@@ -2,8 +2,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("\nDenne opgave er lavet tænkt med et bruger index, dvs. 0=1 (undtagen sidst add metode add(index, value))");
+        //THE HANNE ARRAY WILL RULE ALL ARRAYS
 
+        //Laver en ny liste af typen Int
         HannesArrayList<Integer> hannesArrayList = new HannesArrayList<>();
 
         //Tilføjer 4 elementer til arrayet
@@ -42,5 +43,15 @@ public class Main {
 
         System.out.println("Til sidst så tilføjer vi tallet 5 til index nummer 1:\n- Husk at den tæller index: 0, 1, 2 ,3 ,4 osv");
         hannesArrayList.print();
+        System.out.println();
+
+        //Laver en ny liste af typen String
+        HannesArrayList<String> hannesStringArrayList = new HannesArrayList<>();
+
+        //Tilføjer et element til vores liste
+        System.out.println("Vi har nu lavet et Array af typen String istedet og tilføjer hej:");
+        hannesStringArrayList.add("hej");
+
+        hannesStringArrayList.print();
     }
 }
