@@ -66,5 +66,8 @@ public class Main {
 
         //adding the hanne object the the array
         hanneArrayList.add(hanne);
+
+        System.out.println("\nPrinter objektet hanne ud (Dette vil være en hukommelse placering):");
+        hanneArrayList.print();
     }
 }
