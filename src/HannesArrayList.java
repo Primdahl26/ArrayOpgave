@@ -12,20 +12,29 @@ public class HannesArrayList<E> {
 
     //Returns the array object, depending on the index chosen
     public Object get(int index){
-        return Array.get(hanneArray, index-1);
+        try {
+            return Array.get(hanneArray, index);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     //Adds an element to the array, taking an index, and a value
     //The element that is already present on that index is pushed so the array is made 1 longer
     //NOTE: When the array is made 1 longer, a new array is made
     public void add(int index, E e){
-        Object[] tempArray = new Object[hanneArray.length+1];
+        try {
+            Object[] tempArray = new Object[hanneArray.length+1];
 
-        for (int i = 0; i < tempArray.length - 1; i++) {
-            tempArray[i < index ? i : i + 1] = hanneArray[i];
-            tempArray[index] = e;
+            for (int i = 0; i < tempArray.length - 1; i++) {
+                tempArray[i < index ? i : i + 1] = hanneArray[i];
+                tempArray[index] = e;
+            }
+            hanneArray = tempArray;
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            ex.printStackTrace();
         }
-        hanneArray = tempArray;
     }
 
     //Adds a element to the array, and the array is made 1 longer
@@ -41,16 +50,20 @@ public class HannesArrayList<E> {
     //Removes a element from a given index
     //NOTE: When the array is made 1 shorter, a new array is made
     public void remove(int index){
-        hanneArray[index-1] = null;
+        try {
+            hanneArray[index] = null;
 
-        int j=0;
-        Object[] tempArray = new Object[hanneArray.length-1];
-        for (int i = 0; i<hanneArray.length; i++){
-            if(i != index-1){
-                tempArray[j++] = hanneArray[i];
+            int j=0;
+            Object[] tempArray = new Object[hanneArray.length-1];
+            for (int i = 0; i<hanneArray.length; i++){
+                if(i != index){
+                    tempArray[j++] = hanneArray[i];
+                }
             }
+            hanneArray = tempArray;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
         }
-        hanneArray = tempArray;
     }
 
     //returns the length of the array
